@@ -1,0 +1,51 @@
+// sm - 16px
+// md - 16px
+// lg - 24px
+// xl - 32px
+// 2xl - 36px
+// 3xl - 48px
+
+// h1 - 64px
+// h2 - 48px
+
+@mixin font-inter-sm-400 {
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+@mixin font-inter-md-700 {
+    font-family: Inter;
+    font-weight: 700;
+    font-size: 20px;
+}
+@mixin font-inter-44-700 {
+    font-family: XCharter;
+    font-weight: 700;
+    font-size: 40px; 
+}
+
+@mixin font-xcharter-55-700 {
+    font-family: XCharter;
+    font-weight: 700;
+    font-size: 55px;
+}
+@mixin font-inter-20-400 {
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 20px;
+}
+
+@mixin font-inter-lg-700 {
+    font-family: Inter;
+    font-weight: 700;
+    font-size: 24px;
+}
+
+@mixin font-inter-15-400 {
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 15px;
+}
+
+

@@ -1,0 +1,27 @@
+@use '../mixins';
+@use '../vars';
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.main
+{
+    overflow-x: hidden;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    position: relative;
+    padding-top: 144px;
+    flex: 1 0 auto;
+}

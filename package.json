@@ -1,0 +1,61 @@
+{
+  "name": "nord_ceremony",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "scripts": {
+    "build": "NODE_ENV=production gulp build",
+    "dev": "gulp build",
+    "webpack": "webpack --mode=development"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ]
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "devDependencies": {
+    "@babel/core": "^7.15.0",
+    "@babel/plugin-transform-modules-commonjs": "^7.26.3",
+    "@babel/preset-env": "^7.26.8",
+    "autoprefixer": "^10.4.20",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^9.2.1",
+    "babel-preset-latest": "^6.24.1",
+    "browser-sync": "^2.27.5",
+    "css-loader": "^7.1.2",
+    "del": "^6.1.1",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-babel": "^8.0.0",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-coffee": "^3.0.3",
+    "gulp-concat": "^2.6.1",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-less": "^5.0.0",
+    "gulp-newer": "^1.4.0",
+    "gulp-pug": "^5.0.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^5.0.0",
+    "gulp-size": "^4.0.1",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-ttf2woff2": "4.0.1",
+    "gulp-typescript": "^6.0.0-alpha.1",
+    "gulp-uglify": "^3.0.2",
+    "gulp-webp": "^4.0.1",
+    "sass": "^1.37.5",
+    "style-loader": "^4.0.0",
+    "webpack": "^5.97.1",
+    "webpack-cli": "^6.0.1",
+    "webpack-stream": "^7.0.0"
+  },
+  "dependencies": {
+    "gulp-clean": "^0.4.0",
+    "gulp-fonter": "^0.3.0",
+    "gulp-include": "^2.4.1"
+  }
+}

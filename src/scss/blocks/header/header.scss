@@ -1,0 +1,219 @@
+@use './../../mixins';
+@use './../../vars';
+
+.header {
+    width: 100%;
+    position: fixed;
+    z-index: 2000;
+    height: 90px;
+    background-color: #F6F4EF;
+    display: flex;
+    justify-content: center;
+
+    &__container {
+        width: 80%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__row {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 100%;
+    }
+
+    &__logo {
+        width: 176px;
+        height: 60px;
+    }
+
+    &__nav {
+        display: flex;
+        @media (max-width: 1100px) {
+            display: none !important;
+        }
+        
+        &_list {
+            display: flex;
+            gap: 25px;
+
+            &-item {
+                @include mixins.font-inter-sm-400;
+                color: vars.$brown-color;
+                display: flex;
+                justify-content: center;
+                position: relative;
+                &::after  {
+                    content: '';
+                    display: block;
+                    top: 20px;
+                    position: absolute;
+                    width: 0px;
+                    height: 0px;
+                    background-color: #544040;
+                    border-radius: 50%;
+                    transition: 0.1s;
+                }
+
+                @media (hover: hover) {
+                    &:hover::after  {
+                        width: 8px;
+                        height: 8px;
+                    }
+                }
+                &:focus-within::after  {
+                    width: 8px;
+                    height: 8px;
+                }
+            }
+        }
+    }
+
+    &__btn-store {
+        
+
+        width: 177px;
+        height: 50px;
+        border-radius: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #FFFFFF;
+
+        @include  mixins.font-inter-md-700;
+        color: vars.$brown-color;
+
+        @media (max-width: 1100px) {
+            display: none !important;
+        }
+
+        @media (hover: hover) {
+            &:hover  {
+                background-color: #D9D5D5;
+            }
+        }
+    }
+
+    &__menu-btn-open {
+        @media (min-width: 1100px) {
+            display: none !important;
+        }
+    }
+
+    &__menu {
+        width: 100svw;
+        height: 100svh;
+        position: fixed;
+        justify-content: end;
+        display: flex;
+        transition: 0.4s;
+        visibility: hidden;
+
+        &-active {
+            visibility: visible;
+        }
+
+        @media (min-width: 1100px) {
+            display: none;
+        }
+        
+
+        &-nav {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            color: vars.$brown-color;
+
+            &_item  a {
+                @include mixins.font-inter-20-400;
+                display: flex;
+                align-items: center;
+                color: vars.$brown-color;
+
+                &::after {
+                    content: '';
+                    display: block;
+
+                    margin-left: 10px;
+                    position: relative;
+                    width: 0px;
+                    height: 0px;
+                    background-color: #544040;
+                    border-radius: 50%;
+                    transition: 0.1s;
+                }
+
+                @media (hover: hover) {
+                    &:hover::after  {
+                        width: 8px;
+                        height: 8px;
+                    }
+                }
+                &:active::after  {
+                    width: 8px;
+                    height: 8px;
+                }
+            }
+        }
+
+        &-btn {
+            width: 100%;
+            background: var(--orange, #C27E60);
+            height: 50px;
+
+            @include mixins.font-inter-md-700;
+            border-radius: 40px;
+            color: #FFFFFF;
+
+            margin-top: 150px;
+        }
+
+        &_content {
+            height: 100%;
+            width: 80%;
+            display: flex;
+            flex-direction: column;
+            z-index: 2000;
+            position: relative;
+            background-color: vars.$beige-color;
+            padding: 20px;
+            padding-top: 30px;
+            padding-bottom: 30px;
+            transform: translateX(100%);
+            transition: 0.4s;
+            &-active {
+                transform: translateX(0%);
+            }
+        }
+
+        &_content_top {
+            flex-grow: 1;
+        }
+
+        &_content_bottom {
+            flex-shrink: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+        &_content_bottom_container {
+            padding: 25px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        &-backdrop {
+            background-color: #464242;
+            opacity: 0.3;
+            height: 100%;
+            width: 100%;
+            z-index: 500;
+            position: absolute;
+        }
+    }
+    
+}
