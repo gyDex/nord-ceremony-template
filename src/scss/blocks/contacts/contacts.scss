@@ -1,0 +1,192 @@
+@use './../../mixins';
+@use './../../vars';
+
+.block__contact {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+    padding-bottom: 100px;
+    @media (max-width: 769px) {
+        padding-bottom: 400px;
+    }
+    
+    
+    &_container {
+        width: 80%;
+    }
+
+    &_collumn {
+        display: grid;
+        grid-template-columns: 1fr 1fr 153px;
+        height: 293px;
+
+        gap: 25px;
+
+        @media (max-width: 769px) {
+            display: flex;
+            flex-direction: column;
+        }
+        &_item {
+            background-color: vars.$beige-color;
+
+            padding: 25px;
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            grid-row: 1 / 3;
+            grid-column: 1;
+        }
+
+        &_item-support {
+            background-color: vars.$beige-color;
+            padding: 25px;
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            @media (max-width:769px) {
+                gap: 15px;                            
+            }
+            &_title {
+                font-family: XCharter;
+                font-weight: 700;
+                font-size: 36px;
+                color: vars.$brown-color;
+
+                @media (max-width:769px) {
+                    font-family: XCharter;
+                    font-weight: 700;
+                    font-size: 20px;                            
+                }
+            }
+
+            &_description {
+                font-family: Inter;
+                font-weight: 400;
+                font-size: 16px;
+                color: vars.$brown-color;
+            }
+
+            &_link {
+                display: block;
+
+                font-family: Inter;
+                font-weight: 400;
+                font-size: 16px;
+                text-decoration: underline !important;
+                color: vars.$brown-color;
+            }
+
+            
+        }
+
+        &_item-support-2 {
+            background-color: vars.$beige-color;
+            padding: 25px;
+            border-radius: 20px;
+            grid-row: 2;
+            grid-column: 2;
+
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            align-items: center;
+
+            &_title {
+                font-family: XCharter;
+                font-weight: 700;
+                font-size: 36px;
+                color: vars.$brown-color;
+            }
+
+            &_description {
+                font-family: Inter;
+                font-weight: 400;
+                font-size: 16px;
+                color: vars.$brown-color;
+            }
+            &_link {
+                display: block;
+
+                font-family: Inter;
+                font-weight: 400;
+                font-size: 16px;
+                text-decoration: underline !important;
+
+                color: vars.$brown-color;
+
+            }
+
+        }
+
+        &_item-title {
+            @include mixins.font-xcharter-xl-700;
+            color: vars.$brown-color;
+
+            @media (max-width:769px) {
+                font-family: XCharter;
+                font-weight: 700;
+                font-size: 20px;
+                margin-bottom: 25px;
+            }
+        }
+
+        &_item_btn {
+            background-color: vars.$orange-color;
+            width: 100%;
+            max-width: 360px;
+            height: 60px;
+            border-radius: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            @include mixins.font-inter-lg-700;
+            color: white;
+
+        }
+
+        &_item-social  {
+            grid-row: 1 / 3 ;
+            background-color: vars.$beige-color;
+            padding: 25px;
+            gap: 15px;
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+
+           
+
+            &_title {
+                @include mixins.font-xcharter-xl-700;
+                color: vars.$brown-color;
+                text-align: center;
+
+                @media (max-width:769px) {
+                    text-align: start;
+                }
+            }
+
+            &_network {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                align-items: center;
+                gap: 5px;
+                &_item {
+                    width: 38px;
+                    height: 38px;
+                }
+
+                @media (max-width:769px) {
+                    flex-direction: row;
+                    justify-content: start;
+                    gap: 25px;
+                }
+            }
+        }
+    }
+    
+}

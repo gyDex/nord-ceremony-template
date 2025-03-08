@@ -1,0 +1,83 @@
+@use './../../mixins';
+@use './../../vars';
+
+.popup__success {
+    position: fixed;
+    width: 100svw;
+    height: 100svh;
+    z-index: 2000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    
+
+    &-active {
+        visibility: visible;
+    }
+    
+    &_description {
+        font-family: Inter;
+        font-weight: 400;
+        font-size: 16px;
+        text-align: center;
+        color: vars.$brown-color;
+    }
+
+    &_bottom {
+        margin-top: 25px;
+        margin-bottom: 25px;
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    &_content {
+        background-color: white;
+        position: relative;
+        z-index: 1000;
+        padding: 25px;
+        border-radius: 40px;
+        max-width: 400px;
+        width: 95%;
+    }
+    &_label {
+        font-family: Inter;
+        font-weight: 400;
+        font-size: 16px;
+        color: vars.$brown-color;
+    }
+
+    &_top {
+        display: flex;
+        width: 100%;
+        justify-content: end;
+
+
+    }
+
+    &_btn-close {
+        width: 36px;
+        height: 36px;
+    }
+
+    &_title 
+    {
+        font-family: XCharter;
+        font-weight: 700;
+        font-size: 20px;
+        color: vars.$brown-color;
+    }
+    
+
+    &-backdrop {
+        position: absolute;
+        z-index: 100;
+        width: 100%;
+        height: 100%;
+        background-color: #1D1D1D33;
+    }
+}

@@ -13,7 +13,11 @@
     font-weight: 400;
     font-size: 16px;
 }
-
+@mixin font-inter-sm-700 {
+    font-family: Inter;
+    font-weight: 700;
+    font-size: 16px;
+}
 @mixin font-inter-md-700 {
     font-family: Inter;
     font-weight: 700;
@@ -24,7 +28,26 @@
     font-weight: 700;
     font-size: 40px; 
 }
-
+@mixin font-xcharter-3xl-700 {
+    font-family: XCharter;
+    font-weight: 700;
+    font-size: 48px;
+}
+@mixin font-inter-lg-700 {
+    font-family: Inter;
+    font-weight: 700;
+    font-size: 24px;
+}
+@mixin font-xcharter-xl-700 {
+    font-family: XCharter;
+    font-weight: 700;
+    font-size: 32px;
+}
+@mixin font-xcharter-h2-700 {
+    font-family: XCharter;
+    font-weight: 700;
+    font-size: 48px;
+}
 @mixin font-xcharter-55-700 {
     font-family: XCharter;
     font-weight: 700;
@@ -35,10 +58,20 @@
     font-weight: 400;
     font-size: 20px;
 }
-
+@mixin font-inter-20-700 {
+    font-family: Inter;
+    font-weight: 700;
+    font-size: 20px;
+}
 @mixin font-inter-lg-700 {
     font-family: Inter;
     font-weight: 700;
+    font-size: 24px;
+}
+
+@mixin font-inter-lg-400 {
+    font-family: Inter;
+    font-weight: 400;
     font-size: 24px;
 }
 
