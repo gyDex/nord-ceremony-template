@@ -10,11 +10,20 @@
     display: flex;
     justify-content: center;
 
+    @media (max-width:426px) {
+        height: 46px;
+    }
+
+
     &__container {
         width: 80%;
         display: flex;
         justify-content: space-between;
         align-items: center;
+
+        @media (max-width:426px) {
+            width: 90%;
+        }
     }
 
     &__row {
@@ -28,6 +37,11 @@
     &__logo {
         width: 176px;
         height: 60px;
+
+        @media (max-width:426px) {
+            width: 108px;
+            height: 36px;
+        }
     }
 
     &__nav {
@@ -104,8 +118,8 @@
     }
 
     &__menu {
-        width: 100svw;
-        height: 100svh;
+        width: 100%;
+        height: 100%;
         position: fixed;
         justify-content: end;
         display: flex;

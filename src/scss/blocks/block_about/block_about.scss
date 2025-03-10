@@ -10,17 +10,37 @@
     &_title {
         @include mixins.font-xcharter-3xl-700;
         color: vars.$brown-color;
+
+        @media (max-width: 426px) {
+            font-size: 32px;
+        }
     }
 
-    &_description {
+    &_description-desktop {
         display: block;
         width: 597px;
         @include mixins.font-inter-20-400;
         color: vars.$brown-color;
         margin-top: 10px;
+        margin-bottom: 10px;
 
         @media (max-width:426px) {
-            width: 100%;
+            display: none;
+        }
+    }
+
+    &_description-mobile {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        // width: 597px;
+        @include mixins.font-inter-20-400;
+        color: vars.$brown-color;
+        margin-top: 10px;
+        margin-bottom: 10px;
+
+        @media (min-width:426px) {
+            display: none;
         }
     }
 
@@ -35,14 +55,15 @@
         position: absolute;
         display: flex;
         gap: 25px;
-        margin-left: 50px;
+        margin-left: 25px;
         margin-top: 50px;
-        bottom: 25px;
-
+        bottom: 40px;
+        
         @media (max-width:426px) {
             flex-direction: column;
             right: 10px;
             margin: 0;
+            bottom: 25px;
             gap: 5px;
         }
 
@@ -70,6 +91,7 @@
             @media (max-width:426px) {
                 width: initial;
                 height: initial;
+                max-height: 29px;
                 padding: 6px 10px 6px 10px;
             }
         }
@@ -80,24 +102,43 @@
         height: 450px;
 
         display: flex;
-        // justify-content: center;
-        // align-items: start;
+        justify-content: start;
+        align-items: center;
         position: relative;
+        overflow: hidden;
+        border-radius: 20px;
+        @media (max-width:426px) {
+            height: 230px;
+            justify-content: end;
+            border-radius: 20px;
+        }
     }
 
     &_image {
         position: absolute;
         z-index: -1;
-        object-fit: cover;
+        // object-fit: cover;
         transform: scaleX(-1);
-        border-radius: 40px;
         width: 100%;
         height: 450px;
         margin-top: 10px;
         // object-position: 100% 100%;
+        border-radius: 20px;
+        
+        background-image: url(../../../img/block_about/image.jpg);
+        background-position: 80% 50%;
 
+        background-size: 100%;
+
+        background-repeat: no-repeat;
         @media (max-width:426px) {
-            object-position: 50% 100%;
+            background-position: 20% 100% !important;
+            width: 100%;
+            height: 230px;
+        background-size: 150%;
+
+            // margin: -60px 0;
+            padding-left: 20px;
         }
     }
 }

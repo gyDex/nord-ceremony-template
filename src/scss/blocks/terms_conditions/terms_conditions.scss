@@ -21,6 +21,10 @@
         color: vars.$brown-color;
         text-align: center; 
 
+        @media (max-width: 426px) {
+            font-size: 32px;
+        }
+
         @media (max-width:426px) {
             font-family: XCharter;
             font-weight: 700;
@@ -32,6 +36,8 @@
         @media (min-width: 426px) {
             margin-bottom: 100px;
             margin-top: 100px;
+            padding-right: 150px;
+            padding-left: 150px;
         }
     }
 
@@ -50,8 +56,10 @@
         @media (max-width: 1260px) {
             flex-direction: column;
             background-color: #F6F4EF;
-            border-radius: 40px;
+            border-radius: 20px;
             height: initial;
+            margin-top: 25px;
+            gap: 0px;
         }
 
         &-left {
@@ -63,6 +71,10 @@
                 width: 100%;
                 margin: 0;
                 padding: 50px;
+            }
+
+            @media (max-width: 426px) {
+                padding: 15px;
             }
             &_title {
                 font-family: Inter;
@@ -86,6 +98,24 @@
                 color: white;
 
                 margin-top: 50px;
+
+                &-desktop {
+                    @media (max-width: 1260px) {
+                        display: none;
+                    }
+                    width: 90%;
+
+                    margin-bottom: 50px;               
+
+                }
+
+                &-mobile {
+                    @media (min-width: 1260px) {
+                        display: none;
+                    }
+                    width: 90%;
+                    margin-bottom: 50px;               
+                }
             }
 
             &_description {
@@ -114,7 +144,7 @@
             }
 
             @media (max-width: 425px) {
-                margin-top: 100px;
+                // margin-top: 100px;
             }
             &_item {
                 background: #EDEAE5;
@@ -125,6 +155,21 @@
                 border-radius: 20px;
                 width: 508px;
                 color: vars.$brown-color;
+
+                &-mobile {
+                    @media (min-width: 426px) {
+                        display: none  !important;
+                    }
+
+                    width: 100% !important;
+                    margin-top: 25px;
+                }
+
+                &-desktop {
+                    @media (max-width: 426px) {
+                        display: none !important;
+                    }
+                }
 
 
                 @media (max-width: 1260px) {

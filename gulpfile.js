@@ -54,7 +54,7 @@ const paths = {
     dest: 'dist/pages/'
   },
   images: {
-    src: 'src/img/**/*.{png,jpg,svg}',
+    src: 'src/img/**/*.{png,jpg,svg,jpeg}',
     dest: 'dist/img/'
   },
 
@@ -152,9 +152,9 @@ export  function img() {
   //   .pipe(avif())
   // .pipe(newer(paths.images.dest))
 
-  .pipe(src(paths.images.src))
-  .pipe(newer(paths.images.dest))
-  .pipe(webp())
+  // .pipe(src(paths.images.src))
+  // .pipe(newer(paths.images.dest))
+  // .pipe(webp())
   
   .pipe(src(paths.images.src))
   .pipe(newer(paths.images.dest))

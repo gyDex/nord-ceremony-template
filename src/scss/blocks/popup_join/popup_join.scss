@@ -102,7 +102,7 @@
     &_description {
         font-family: Inter;
         font-weight: 400;
-        font-size: 14px;
+        font-size: 10px;
         color: vars.$brown-color;
     }
 
@@ -134,7 +134,7 @@
         border: 1px solid #C0B8B8;
         border-radius: 10px;
         height:46px;
-        padding-left: 25px;
+        padding-left: 15px;
         padding-right: 25px;
 
         font-family: Inter;
@@ -144,7 +144,17 @@
 
         margin-top: 5px;
 
+        &::placeholder {
+            font-family: Inter;
+            font-weight: 400;
+            font-size: 16px;
+        }
+
         &-error {
+            &::placeholder {
+                color: #F02D13;
+            }
+
             border: 1px solid #F02D13;
         }
 
@@ -169,7 +179,10 @@
         font-size: 24px;
         color: white;
 
-        
+        &-close {
+            width: 36px !important;
+            height: 36px !important;
+        }
     }
 
     &_input-tel {

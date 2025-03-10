@@ -26,7 +26,8 @@
     &_top {
         display: flex;
         width: 100%;
-        justify-content: space-between;
+        gap: 15px;
+        // justify-content: space-between;
         @media (max-width: 1024px) {
             flex-direction: column;
 
@@ -46,8 +47,13 @@
 
         &_info {
             width: 440px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
             @media (max-width:1024px) {
                 width: 100%;
+                display: flex
+
             }
         }
         &_title {
@@ -61,7 +67,6 @@
                 width: 100%;
                 @include mixins.font-inter-44-700
             }
-
         }
 
         &_title-highlighted {
@@ -149,6 +154,10 @@
                     color: vars.$brown-color;
                     width: 315px;
                     @include mixins.font-inter-20-400;
+
+                    @media (max-width:426px) {
+                       font-size: 16px;
+                    }
                 }
 
                 &::before{
