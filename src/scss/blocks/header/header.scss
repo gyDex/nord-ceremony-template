@@ -17,6 +17,7 @@
 
     &__container {
         width: 80%;
+        max-width: 1041px;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -183,6 +184,11 @@
             color: #FFFFFF;
 
             margin-top: 150px;
+        }
+
+        &_content_bottom_link {
+            height: 48px;
+            width: 48px;
         }
 
         &_content {
