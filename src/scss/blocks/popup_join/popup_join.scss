@@ -6,27 +6,28 @@
     border: 1px solid vars.$brown-color;
     width: 20px;
     height: 20px;
-  }
-  
-  .checkbox{
+}
+
+.checkbox {
     position: relative;
     width: fit-content;
-  
+
     position: relative;
     height: 20px;
     border-radius: 5px;
-  
+
     display: flex;
-  }
-  
-  .checkbox-label{
-  
+}
+
+.checkbox-label {
+
     font-family: Montserrat;
     font-size: 12px;
     font-weight: 400;
     line-height: 19.8px;
-  }
-  .checkbox-new {
+}
+
+.checkbox-new {
     position: absolute;
     top: 0px;
     left: 0px;
@@ -39,31 +40,33 @@
     /* border-radius: 20px; */
     user-select: none;
     -webkit-user-select: none;
-  }
-  
-  .checkbox-new_checked {
+}
+
+.checkbox-new_checked {
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-  .checkbox-input:not(:checked) + .checkbox-new > .checkbox-new_checked {
+}
+
+.checkbox-input:not(:checked) + .checkbox-new > .checkbox-new_checked {
     display: none;
-  }
-  .checkbox-input:checked {
-    background: var(--yellow-color);  
+}
+
+.checkbox-input:checked {
+    background: var(--yellow-color);
     border: 15px solid #000000;
-  }
-  
-  .panel_admin_records input[type="checkbox"]:checked {
+}
+
+.panel_admin_records input[type="checkbox"]:checked {
     border: 1px solid transparent;
-  }
-  
-  .checkbox-input:checked + .checkbox-new {
+}
+
+.checkbox-input:checked + .checkbox-new {
     color: #000000;
-  }
-  
-  .checkbox-input {
+}
+
+.checkbox-input {
     appearance: none;
     position: relative;
     width: 20px;
@@ -71,7 +74,7 @@
     border-radius: 5px;
     border: 2px solid #FFFFFF;
 }
-  
+
 
 .popup__join {
     position: fixed;
@@ -82,12 +85,12 @@
     justify-content: center;
     align-items: center;
     visibility: hidden;
-    
+
 
     &-active {
         visibility: visible;
     }
-    
+
 
     &_bottom {
         margin-top: 25px;
@@ -133,7 +136,7 @@
     &_input {
         border: 1px solid #C0B8B8;
         border-radius: 10px;
-        height:46px;
+        height: 46px;
         padding-left: 15px;
         padding-right: 25px;
 
@@ -158,9 +161,7 @@
             border: 1px solid #F02D13;
         }
 
-        @media (max-width: 426px) {
-
-        }
+        @media (max-width: 426px) {}
 
     }
 
@@ -199,7 +200,7 @@
         font-size: 16px;
         color: vars.$brown-color;
 
-        
+
     }
 
     &_input-tel_select {
@@ -218,7 +219,7 @@
     &_input-tel_container {
         border: 1px solid #C0B8B8;
         border-radius: 10px;
-        height:46px;
+        height: 46px;
         position: relative;
         overflow: hidden;
         margin-top: 15px;
@@ -252,9 +253,8 @@
         align-items: center;
     }
 
-    &_title 
-    {
-        font-family: XCharter;
+    &_title {
+        font-family: Inter;
         font-weight: 700;
         font-size: 40px;
         color: vars.$brown-color;
@@ -263,7 +263,7 @@
             font-size: 28px;
         }
     }
-    
+
 
     &-backdrop {
         position: absolute;

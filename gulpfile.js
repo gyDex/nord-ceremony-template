@@ -66,7 +66,7 @@ const paths = {
 
 // Преобразование из других форматов шрифтов в woof2, ttf2 
 export function fonts() {
-  return src(paths.fonts.src, { base: 'src/fonts' })
+  return src(paths.fonts.src)
     .pipe(fonter({
       formats: ['woff', 'ttf']
     }))

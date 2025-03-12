@@ -217,7 +217,8 @@
             flex-shrink: 0;
             width: 100%;
             display: flex;
-            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
         }
         &_content_bottom_container {
             padding: 25px;
