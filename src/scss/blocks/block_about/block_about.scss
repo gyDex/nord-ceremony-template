@@ -20,24 +20,7 @@
         }
     }
 
-    &_description-desktop {
-        display: block;
-        width: 597px;
-        @include mixins.font-inter-20-400;
-        color: vars.$brown-color;
-        margin-top: 10px;
-        margin-bottom: 10px;
-
-        @media (max-width:426px) {
-            display: none;
-        }
-
-        @media (max-width: 1440px) {
-            width: initial;
-        }
-    }
-
-    &_description-mobile {
+    &_description {
         display: flex;
         flex-direction: column;
         gap: 25px;
@@ -46,9 +29,7 @@
         margin-top: 10px;
         margin-bottom: 10px;
 
-        @media (min-width:426px) {
-            display: none;
-        }
+        max-width: 600px;
     }
 
     &_container {
@@ -122,9 +103,8 @@
             border-radius: 20px;
         }
 
-        @media (min-width:426px) and (max-width:1440px) {
+        @media (min-width:426px) and (max-width:1439px) {
             height: 330px;
-            // justify-content: end;
             border-radius: 20px;
         }
     }
