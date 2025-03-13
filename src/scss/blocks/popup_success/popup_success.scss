@@ -10,12 +10,12 @@
     justify-content: center;
     align-items: center;
     visibility: hidden;
-    
+
 
     &-active {
         visibility: visible;
     }
-    
+
     &_description {
         font-family: Inter;
         font-weight: 400;
@@ -44,6 +44,7 @@
         max-width: 400px;
         width: 95%;
     }
+
     &_label {
         font-family: Inter;
         font-weight: 400;
@@ -64,14 +65,13 @@
         height: 36px;
     }
 
-    &_title 
-    {
-        font-family: XCharter;
+    &_title {
+        font-family: Inter;
         font-weight: 700;
         font-size: 17px;
         color: vars.$brown-color;
     }
-    
+
 
     &-backdrop {
         position: absolute;

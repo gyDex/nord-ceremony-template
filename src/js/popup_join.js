@@ -1,24 +1,19 @@
-const btn_close = document.getElementById('popup_join_btn-close');
+document.addEventListener("DOMContentLoaded", () => {
+    const closeButton = document.getElementById("popup_join_btn-close");
+    const openButtons = document.querySelectorAll(".popup_join_btn_open");
+    const popupJoin = document.getElementById("popup_join");
+    const popupJoinContent = document.getElementById("popup_join_content");
 
-const btn_open_data = document.getElementsByClassName('popup_join_btn_open');
+    function openPopup() {
+        popupJoin.classList.add("popup__join-active");
+        popupJoinContent.classList.add("popup__join__content-active");
+    }
 
-const popup_join = document.getElementById('popup_join')
-const popup_join_content = document.getElementById('popup_join_content')
-const popup_join_backdrop = document.getElementById('popup_join_backdrop')
-console.log(popup_join);
+    function closePopup() {
+        popupJoin.classList.remove("popup__join-active");
+        popupJoinContent.classList.remove("popup__join__content-active");
+    }
 
-console.log(btn_open_data[0]);
-
-btn_open_data[0].addEventListener('click', function () {
-    popup_join.classList.add('popup__join-active')
-    popup_join_content.classList.add('popup__join__content-active')
-})
-btn_open_data[1].addEventListener('click', function () {
-    popup_join.classList.add('popup__join-active')
-    popup_join_content.classList.add('popup__join__content-active')
-})
-btn_close.addEventListener('click', function () {
-    popup_join.classList.remove('popup__join-active')
-    popup_join_content.classList.remove('popup__join__content-active')
-
-})
+    openButtons.forEach(button => button.addEventListener("click", openPopup));
+    closeButton?.addEventListener("click", closePopup);
+});
