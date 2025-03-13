@@ -15,7 +15,7 @@
         @include mixins.font-xcharter-3xl-700;
         color: vars.$brown-color;
 
-        @media (max-width: 426px) {
+        @media (max-width: 768px) {
             font-size: 32px;
         }
     }
@@ -36,7 +36,7 @@
         width: 80%;
         max-width: 1041px;
 
-        @media (max-width:426px) {
+        @media (max-width:768px) {
             width: 95%;
         }
     }
@@ -48,7 +48,7 @@
         margin-left: 25px;
         margin-top: 50px;
         bottom: 40px;
-        
+
         @media (max-width:1024px) {
             flex-direction: column;
             right: 10px;
@@ -57,7 +57,7 @@
             gap: 5px;
         }
 
-        // @media (min-width:426px) and (max-width:769px) {
+        // @media (min-width:768px) and (max-width:769px) {
         //     width: 100%;
         //     display: flex;
         //     justify-content: space-between;
@@ -78,7 +78,7 @@
             color: vars.$brown-color;
             @include mixins.font-inter-20-400;
 
-            @media (max-width:426px) {
+            @media (max-width:768px) {
                 width: initial;
                 height: initial;
                 max-height: 29px;
@@ -97,13 +97,14 @@
         position: relative;
         overflow: hidden;
         border-radius: 20px;
-        @media (max-width:426px) {
+
+        @media (max-width:768px) {
             height: 230px;
             justify-content: end;
             border-radius: 20px;
         }
 
-        @media (min-width:426px) and (max-width:1439px) {
+        @media (min-width:768px) and (max-width:1439px) {
             height: 330px;
             border-radius: 20px;
         }
@@ -117,22 +118,29 @@
         height: 450px;
         margin-top: 10px;
         border-radius: 20px;
-        
+
         background-image: url(../../../img/block_about/image.jpg);
+
+        background-image: image-set(url("../../../img/block_about/image.avif") type("image/avif"),
+                    url("../../../img/block_about/image.webp") type("image/webp"),
+                    url("../../../img/block_about/image.jpg") type("image/jpeg"));
         background-position: 80% 50%;
 
         background-size: 100%;
 
         background-repeat: no-repeat;
-        @media (min-width: 426px) and (max-width: 1024px) {
+
+        @media (min-width: 768px) and (max-width: 1024px) {
             background-size: 150%;
         }
-        @media (min-width: 426px) and (max-width: 550px) {
+
+        @media (min-width: 768px) and (max-width: 550px) {
             background-size: 200%;
             background-position: 50% 55% !important;
 
         }
-        @media (max-width:426px) {
+
+        @media (max-width:768px) {
             background-position: 20% 100% !important;
             width: 100%;
             height: 230px;

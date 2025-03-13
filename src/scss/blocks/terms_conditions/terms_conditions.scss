@@ -7,11 +7,11 @@
     justify-content: center;
     margin-top: 186px;
 
-    @media (max-width: 426px) {
+    @media (max-width: 768px) {
         margin-top: 0;
     }
 
-    @media (min-width: 426px) and (max-width: 1440px) {
+    @media (min-width: 768px) and (max-width: 1440px) {
         margin-top: 78px;
     }
 
@@ -24,7 +24,7 @@
 
         }
 
-        @media (max-width: 1260px) and (min-width: 426px) {
+        @media (max-width: 1260px) and (min-width: 768px) {
             width: 80%;
         }
 
@@ -37,11 +37,11 @@
         color: vars.$brown-color;
         text-align: center;
 
-        @media (max-width: 426px) {
+        @media (max-width: 768px) {
             font-size: 32px;
         }
 
-        @media (max-width:426px) {
+        @media (max-width:768px) {
             font-family: Inter;
             font-weight: 700;
             font-size: 32px;
@@ -49,7 +49,7 @@
 
         }
 
-        @media (min-width: 426px) {
+        @media (min-width: 768px) {
             margin-bottom: 48px;
         }
     }
@@ -86,7 +86,7 @@
                 padding: 50px;
             }
 
-            @media (max-width: 426px) {
+            @media (max-width: 768px) {
                 padding: 15px;
                 height: initial !important;
             }
@@ -98,7 +98,7 @@
 
                 color: #544040;
 
-                @media (max-width: 426px) {
+                @media (max-width: 768px) {
                     font-size: 32px;
                     width: 150px;
 
@@ -153,7 +153,7 @@
                 color: vars.$brown-color;
                 margin-top: 15px;
 
-                @media (max-width: 426px) {
+                @media (max-width: 768px) {
                     font-size: 16px;
                 }
             }
@@ -181,13 +181,13 @@
                 width: 508px;
                 color: vars.$brown-color;
 
-                @media (max-width: 426px) {
+                @media (max-width: 768px) {
                     height: 116px;
                     line-height: 120%;
                 }
 
                 &-mobile {
-                    @media (min-width: 426px) {
+                    @media (min-width: 768px) {
                         display: none !important;
                     }
 
@@ -196,7 +196,7 @@
                 }
 
                 &-desktop {
-                    @media (max-width: 426px) {
+                    @media (max-width: 768px) {
                         display: none !important;
                     }
                 }

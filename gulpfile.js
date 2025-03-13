@@ -54,7 +54,7 @@ const paths = {
     dest: 'dist/pages/'
   },
   images: {
-    src: 'src/img/**/*.{png,jpg,svg,jpeg}',
+    src: 'src/img/**/*.{png,jpg,svg,jpeg,avif,webp}',
     dest: 'dist/img/'
   },
 
