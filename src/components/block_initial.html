@@ -23,11 +23,14 @@
                     </span>
                 </div>
 
-                
             </div>
 
             <div class="block__initial_top_image_container">
-                <img class="block__initial_top_image" src="./img/block_initial/image.jpg" alt="">
+                <picture>
+                    <source srcset="./img/block_initial/image.avif" type="image/avif">
+                    <source srcset="./img/block_initial/image.webp" type="image/webp">
+                    <img class="block__initial_top_image" src="./img/block_initial/image.jpg" alt="" loading="lazy">
+                </picture>
             </div>
 
             <button class="popup_join_btn_open block__initial_top-btn block__initial_top-btn-mobile">

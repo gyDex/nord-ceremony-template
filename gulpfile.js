@@ -7,26 +7,26 @@ const require = createRequire(import.meta.url);
 import pkg from 'gulp';
 const { src, dest } = pkg;
 
-import gulp  from 'gulp'
+import gulp from 'gulp'
 const sass = require('gulp-sass')(require('sass'))
-import rename  from 'gulp-rename'
-import cleanCSS  from 'gulp-clean-css'
-import sourcemaps  from 'gulp-sourcemaps'
-import autoprefixer  from 'gulp-autoprefixer'
-import imagemin  from 'gulp-imagemin'
-import htmlmin  from 'gulp-htmlmin'
-import size  from 'gulp-size'
-import newer  from 'gulp-newer'
-import browsersync  from 'browser-sync';
-import del  from 'del'
-import webp  from 'gulp-webp';
-import include  from 'gulp-include';
-import fonter  from 'gulp-fonter';
-import ttf2woff2  from 'gulp-ttf2woff2';
+import rename from 'gulp-rename'
+import cleanCSS from 'gulp-clean-css'
+import sourcemaps from 'gulp-sourcemaps'
+import autoprefixer from 'gulp-autoprefixer'
+import imagemin from 'gulp-imagemin'
+import htmlmin from 'gulp-htmlmin'
+import size from 'gulp-size'
+import newer from 'gulp-newer'
+import browsersync from 'browser-sync';
+import del from 'del'
+import webp from 'gulp-webp';
+import include from 'gulp-include';
+import fonter from 'gulp-fonter';
+import ttf2woff2 from 'gulp-ttf2woff2';
 
 
-import webpack  from 'webpack';
-import webpackStream  from 'webpack-stream';
+import webpack from 'webpack';
+import webpackStream from 'webpack-stream';
 
 const webpackConfig = require('./webpack.config.cjs')
 
@@ -38,11 +38,11 @@ const paths = {
     dest: 'dist/'
   },
   styles: {
-    src: ['src/scss/**/*.sass', 'src/scss/**/*.scss', 'src/scss/**/*.css', 'src/scss/*.scss','src/scss/**.scss'],
+    src: ['src/scss/**/*.sass', 'src/scss/**/*.scss', 'src/scss/**/*.css', 'src/scss/*.scss', 'src/scss/**.scss'],
     dest: 'dist/css/'
   },
   scripts: {
-    src: ['src/js/**/*.coffee', 'src/js/**/*.ts', 'src/js/**/*.js', 'src/js/**','src/js/components/**'],
+    src: ['src/js/**/*.coffee', 'src/js/**/*.ts', 'src/js/**/*.js', 'src/js/**', 'src/js/components/**'],
     dest: 'dist/js/'
   },
   components: {
@@ -54,7 +54,7 @@ const paths = {
     dest: 'dist/pages/'
   },
   images: {
-    src: 'src/img/**/*.{png,jpg,svg,jpeg}',
+    src: 'src/img/**/*.{png,jpg,svg,jpeg,avif,webp}',
     dest: 'dist/img/'
   },
 
@@ -65,22 +65,22 @@ const paths = {
 }
 
 // Преобразование из других форматов шрифтов в woof2, ttf2 
-export  function fonts() {
+export function fonts() {
   return src(paths.fonts.src)
-  .pipe(fonter({
-    formats: ['woff', 'ttf']
-  }))
-  .pipe(src('src/fonts/*.ttf'))
-  .pipe(ttf2woff2())
-  .pipe(dest(paths.fonts.dest))
+    .pipe(fonter({
+      formats: ['woff', 'ttf']
+    }))
+    .pipe(src('src/fonts/*.ttf'))
+    .pipe(ttf2woff2())
+    .pipe(dest(paths.fonts.dest))
 }
 
 
 // Разделение html-файлов на компоненты
 export function components() {
-    return src(paths.pages.src)
+  return src(paths.pages.src)
     .pipe(include({
-        includePaths: paths.components.src
+      includePaths: paths.components.src
     }))
     .pipe(dest(paths.html.dest))
     .pipe(server.stream())
@@ -93,85 +93,85 @@ export function clean() {
 }
 
 // Обработка html
-export  function html() {
+export function html() {
   return gulp.src(paths.html.src)
-  //.pipe(gulppug())
-  .pipe(htmlmin({ collapseWhitespace: true }))
-  .pipe(size({
-    showFiles:true
-  }))
-  .pipe(gulp.dest(paths.html.dest))
-  .pipe(server.stream())
+    //.pipe(gulppug())
+    .pipe(htmlmin({ collapseWhitespace: true }))
+    .pipe(size({
+      showFiles: true
+    }))
+    .pipe(gulp.dest(paths.html.dest))
+    .pipe(server.stream())
 }
 
 // Обработка препроцессоров стилей
 export function styles() {
   return gulp.src(paths.styles.src)
-  .pipe(sourcemaps.init())
-  .pipe(sass().on('error', sass.logError))
-  .pipe(autoprefixer({
-    cascade: false
-  }))
-  .pipe(cleanCSS({
-    level: 2
-  }))
-  .pipe(rename({
-    basename: 'style',
-    suffix: '.min'
-  }))
-  .pipe(sourcemaps.write('.'))
-  .pipe(size({
-    showFiles:true
-  }))
-  .pipe(gulp.dest(paths.styles.dest))
-  .pipe(server.stream())
+    .pipe(sourcemaps.init())
+    .pipe(sass().on('error', sass.logError))
+    .pipe(autoprefixer({
+      cascade: false
+    }))
+    .pipe(cleanCSS({
+      level: 2
+    }))
+    .pipe(rename({
+      basename: 'style',
+      suffix: '.min'
+    }))
+    .pipe(sourcemaps.write('.'))
+    .pipe(size({
+      showFiles: true
+    }))
+    .pipe(gulp.dest(paths.styles.dest))
+    .pipe(server.stream())
 }
 
 // Обработка Java Script
-export  function scripts() {
+export function scripts() {
   return gulp.src(paths.scripts.src)
-  .pipe(webpackStream(webpackConfig), webpack)
-  // .pipe(sourcemaps.init())
-  // .pipe(
-  //   babel({
-  //   presets: ['@babel/env'],
-  // }))
-  // .pipe(uglify())
-  // .pipe(concat('main.min.js'))
-  // .pipe(sourcemaps.write('.'))
-  // .pipe(size({
-  //   showFiles:true
-  // }))
-  .pipe(gulp.dest(paths.scripts.dest))
-  .pipe(server.stream())
+    .pipe(webpackStream(webpackConfig), webpack)
+    // .pipe(sourcemaps.init())
+    // .pipe(
+    //   babel({
+    //   presets: ['@babel/env'],
+    // }))
+    // .pipe(uglify())
+    // .pipe(concat('main.min.js'))
+    // .pipe(sourcemaps.write('.'))
+    // .pipe(size({
+    //   showFiles:true
+    // }))
+    .pipe(gulp.dest(paths.scripts.dest))
+    .pipe(server.stream())
 }
 
 // Сжатие изображений
-export  function img() {
+export function img() {
   return src(paths.images.src)
-  //   .pipe(avif())
-  // .pipe(newer(paths.images.dest))
+    //   .pipe(avif())
+    // .pipe(newer(paths.images.dest))
 
-  // .pipe(src(paths.images.src))
-  // .pipe(newer(paths.images.dest))
-  // .pipe(webp())
-  
-  .pipe(src(paths.images.src))
-  .pipe(newer(paths.images.dest))
-  .pipe(imagemin({
-    progressive: true
-  }))
-  .pipe(size({
-    showFiles:true
-  }))
-  .pipe(dest(paths.images.dest))
+    // .pipe(src(paths.images.src))
+    // .pipe(newer(paths.images.dest))
+    // .pipe(webp())
+
+    .pipe(src(paths.images.src))
+    .pipe(newer(paths.images.dest))
+    .pipe(imagemin({
+      progressive: true
+    }))
+    .pipe(size({
+      showFiles: true
+    }))
+    .pipe(dest(paths.images.dest))
 }
 
 // Отслеживание изменений в файлах и запуск лайв сервера
 export function watch() {
   server.init({
     server: {
-        baseDir: "./dist"
+      baseDir: "./dist"
     }
   })
   gulp.watch(paths.components.src, components)
@@ -186,4 +186,4 @@ export function watch() {
 // Таски для ручного запуска с помощью gulp clean, gulp html и т.д.
 
 // Таск, который выполняется по команде gulp
-export default gulp.series(clean, html, gulp.parallel(scripts, components, fonts,styles, img), watch)
+export default gulp.series(clean, html, gulp.parallel(scripts, components, fonts, styles, img), watch)

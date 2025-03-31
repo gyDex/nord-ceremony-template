@@ -3,14 +3,14 @@
 
 .header {
     width: 100%;
-    position: fixed;
+    position: absolute;
     z-index: 2000;
     height: 90px;
     background-color: #F6F4EF;
     display: flex;
     justify-content: center;
 
-    @media (max-width:426px) {
+    @media (max-width:768px) {
         height: 46px;
     }
 
@@ -22,7 +22,7 @@
         justify-content: space-between;
         align-items: center;
 
-        @media (max-width:426px) {
+        @media (max-width:768px) {
             width: 90%;
         }
     }
@@ -35,11 +35,11 @@
         height: 100%;
     }
 
-    &__logo {
+    &__logo img {
         width: 176px;
         height: 60px;
 
-        @media (max-width:426px) {
+        @media (max-width:768px) {
             width: 108px;
             height: 36px;
         }
@@ -47,10 +47,11 @@
 
     &__nav {
         display: flex;
+
         @media (max-width: 1100px) {
             display: none !important;
         }
-        
+
         &_list {
             display: flex;
             gap: 25px;
@@ -61,7 +62,8 @@
                 display: flex;
                 justify-content: center;
                 position: relative;
-                &::after  {
+
+                &::after {
                     content: '';
                     display: block;
                     top: 20px;
@@ -74,12 +76,13 @@
                 }
 
                 @media (hover: hover) {
-                    &:hover::after  {
+                    &:hover::after {
                         width: 8px;
                         height: 8px;
                     }
                 }
-                &:focus-within::after  {
+
+                &:focus-within::after {
                     width: 8px;
                     height: 8px;
                 }
@@ -88,7 +91,7 @@
     }
 
     &__btn-store {
-        
+
 
         width: 177px;
         height: 50px;
@@ -98,7 +101,7 @@
         align-items: center;
         background: #FFFFFF;
 
-        @include  mixins.font-inter-md-700;
+        @include mixins.font-inter-md-700;
         color: vars.$brown-color;
 
         @media (max-width: 1100px) {
@@ -106,7 +109,7 @@
         }
 
         @media (hover: hover) {
-            &:hover  {
+            &:hover {
                 background-color: #D9D5D5;
             }
         }
@@ -134,7 +137,7 @@
         @media (min-width: 1100px) {
             display: none;
         }
-        
+
 
         &-nav {
             display: flex;
@@ -142,7 +145,7 @@
             gap: 15px;
             color: vars.$brown-color;
 
-            &_item  a {
+            &_item a {
                 @include mixins.font-inter-20-400;
                 display: flex;
                 align-items: center;
@@ -162,12 +165,13 @@
                 }
 
                 @media (hover: hover) {
-                    &:hover::after  {
+                    &:hover::after {
                         width: 8px;
                         height: 8px;
                     }
                 }
-                &:active::after  {
+
+                &:active::after {
                     width: 8px;
                     height: 8px;
                 }
@@ -204,6 +208,7 @@
             padding-bottom: 30px;
             transform: translateX(100%);
             transition: 0.4s;
+
             &-active {
                 transform: translateX(0%);
             }
@@ -217,8 +222,10 @@
             flex-shrink: 0;
             width: 100%;
             display: flex;
-            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
         }
+
         &_content_bottom_container {
             padding: 25px;
             width: 100%;
@@ -235,5 +242,5 @@
             position: absolute;
         }
     }
-    
+
 }
